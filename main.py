@@ -3,7 +3,7 @@
 
 def set_tax_rate():
   state = input("Enter the abbreviation for your state:\n")
-  tax_dict = {"NJ":0.066, 
+  tax_dict = {"NJ":0.06625, 
               "DE":0.00,
               "OR":0.00,
              }
