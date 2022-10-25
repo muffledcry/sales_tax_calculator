@@ -16,7 +16,17 @@ def get_item():
   return item_name, price
 
 def calculate_tax(price, tax_rate):
-  global tax_rate
   sales_tax = price * tax_rate
   total = price + sales_tax
   return total, sales_tax
+
+def receipt():
+  print(f"You purchased {item_name}")
+  print(f"Its price was ${price}")
+  print(f"You paid ${sales_tax:.2f} in sales tax.")
+  print(f"The total cost is ${total:.2f}")
+
+item_name, price = get_item()
+tax_rate = set_tax_rate()
+total, sales_tax = calculate_tax(price, tax_rate)
+receipt()
