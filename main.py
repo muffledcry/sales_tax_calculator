@@ -1,6 +1,3 @@
-
-
-
 def set_tax_rate():
   state = input("Enter the abbreviation for your state:\n")
   tax_dict = {"NJ":0.06625, 
@@ -11,9 +8,19 @@ def set_tax_rate():
   return tax_rate
 
 def get_item():
-  item_name = input("What item are you buying?")
-  price = float(input("What is the price of the item?"))
-  return item_name, price
+  items = []
+  prices = []
+  while True:
+    item_name = input("What item are you buying?")
+    price = float(input("What is the price of the item?"))
+    buy_more = input("Are you buying another item?")
+    items.append(item_name)
+    prices.append(price)
+    if buy_more == "y":
+      continue
+    else:
+      break
+  return items, prices
 
 def calculate_tax(price, tax_rate):
   sales_tax = price * tax_rate
